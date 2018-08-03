@@ -1,4 +1,5 @@
 #include <iostream>
+#include<conio.h>
 
 using namespace std;
 
@@ -25,5 +26,11 @@ int main(){
 	cout << "We can calculate the nth fibonacci number, please enter the number here (0 is the first index): ";
 	int num;
 	cin >> num;
-	cout << "\nThe fibonacci number of the index " << num << " is " << fibonacci(num);
+	while (num > 46){
+		cout << "The calculator cannot return valid numbers beyond index 46, please enter a number less than or equal to 46: ";
+		cin >> num;
+	}
+	cout << "\nThe fibonacci number of the index " << num << " is " << fibonacci(num) << endl;
+	cout << "Press any key to end ..." << endl;
+	getch();
 }
