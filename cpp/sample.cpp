@@ -1,5 +1,5 @@
 #include <iostream>
-#include<conio.h>
+#include <conio.h>
 
 using namespace std;
 
@@ -13,13 +13,23 @@ int fibonacci(int i){
 	}
 	int last = 1;
 	int slast = 0;
-	int x;
-	for (x = 1; x < i; x++){
+	for (int x = 1; x < i; x++){
 		int temp = last;
 		last += slast;
 		slast = temp;
 	}
 	return last;
+}
+
+int factorial(int i){
+	if (i <= 0){
+		return 1;
+	}
+	int ret = 1;
+	for (int x = 1; x <= i; x++){
+		ret *= x;
+	}
+	return ret;
 }
 
 int main(){
@@ -31,6 +41,13 @@ int main(){
 		cin >> num;
 	}
 	cout << "\nThe fibonacci number of the index " << num << " is " << fibonacci(num) << endl;
+	cout << "\nWe can also calculate factorials, please enter a number here: ";
+	cin >> num;
+	while (num > 12){
+		cout << "The calculator cannot return valid numbers beyond index 12, please enter a number less than or equal to 12: ";
+		cin >> num;
+	}
+	cout << "\nThe factorial of " << num << " is " << factorial(num) << endl;
 	cout << "Press any key to end ..." << endl;
 	getch();
 }
