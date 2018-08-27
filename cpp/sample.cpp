@@ -49,5 +49,6 @@ int main(){
 	}
 	cout << "\nThe factorial of " << num << " is " << factorial(num) << endl;
 	cout << "Press any key to end ..." << endl;
-	getch();
+	//getch();
+	return 0;
 }
